@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "25YXZFs4ET7XrVkY2+j+ovhqQjAjGAqMwvuJZgBRD6IepNdqfQ+hMZcyZPVRhQ5t8OAgomrmpap6lUaZca2WBQ==",
+  "dgSpecHash": "gJ6X/hwbiSTcoqIauztltkzCZz2YgF6k4jXfYubktg1hDCXbqPZ+/tXAH68uaBfoNSjl+FpfuK6v5uA1eCJGBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Student\\Documents\\DiplomenProekt2023\\VinylWorld\\VinylWorld\\VinylWorld.csproj",
+  "projectFilePath": "C:\\Users\\Student\\Documents\\DiplomenProekt2023\\DiplomenProekt2023\\VinylWorld\\VinylWorld\\VinylWorld.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Student\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",
