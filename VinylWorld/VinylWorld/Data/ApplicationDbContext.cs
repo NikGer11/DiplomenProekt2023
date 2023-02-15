@@ -15,10 +15,10 @@ namespace VinylWorld.Data
             this.Database.EnsureCreated();
         }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Album> Albums { get; set; }
 
-        public DbSet<Purchase> Purchase { get; set; }
-        public DbSet<Vinyl> Vinyl { get; set; }
-        public DbSet<Genre> Genre { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Artist> Artists { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }
