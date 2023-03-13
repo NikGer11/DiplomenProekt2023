@@ -38,7 +38,7 @@ namespace VinylWorld.Domain
         [Required]
         [Range(0, 5000)]
         public decimal Price { get; set; }
-        [Range(0, 100)]
+        [Range(0, 200)]
         public decimal Discount { get; set; }
 
         public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();
