@@ -11,8 +11,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VinylWorld.Abstractions;
 using VinylWorld.Data;
+using VinylWorld.Domain;
 using VinylWorld.Infrastructure;
+using VinylWorld.Services;
 
 namespace VinylWorld
 {
@@ -30,20 +33,21 @@ namespace VinylWorld
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseLazyLoadingProxies()
-                .UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            .UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<ApplicationDbContext>()
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+          //  services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IArtistService, ArtistService>();
+            services.AddTransient<IGenreService, GenreService>();
+          //  services.AddTransient<IStatisticsService, StatisticsService>();
+
             services.AddControllersWithViews();
-
-
             services.AddRazorPages();
             services.Configure<IdentityOptions>(options =>
             {
