@@ -6,7 +6,7 @@ using VinylWorld.Domain;
 
 namespace VinylWorld.Abstractions
 {
-    interface IArtistService
+    public interface IArtistService
     {
         List<Artist> GetArtists();
 

@@ -21,6 +21,12 @@ namespace VinylWorld.Infrastructure
             await RoleSeeder(services);
             await SeedAdministrator(services);
 
+            //var dataGenre = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            //SeedGenres(dataGenre);
+
+            //var dataArtist = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            //SeedArtists(dataArtist);
+
             var dataGenre = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedGenres(dataGenre);
 
@@ -58,6 +64,7 @@ namespace VinylWorld.Infrastructure
                 user.Email = "admin@admin.com";
 
                 var result = await userManager.CreateAsync(user, "admin123");
+
                 if (result.Succeeded)
                 {
                     userManager.AddToRoleAsync(user, "Administrator").Wait();
@@ -79,7 +86,7 @@ namespace VinylWorld.Infrastructure
                 new Genre{GenreName="Rock"},
                 new Genre{GenreName="Jazz"},
                 new Genre{GenreName="Metal"},
-                new Genre{GenreName="Soul"},
+                new Genre{GenreName="Soul"}
             });
             dataGenre.SaveChanges();
         }
@@ -93,14 +100,14 @@ namespace VinylWorld.Infrastructure
 
             dataArtist.Artists.AddRange(new[]
             {
-                new Artist{ArtistName="Acer"},
-                new Artist{ArtistName="Asus"},
-                new Artist{ArtistName="Apple"},
-                new Artist{ArtistName="Dell"},
-                new Artist{ArtistName="HP"},
-                new Artist{ArtistName="Huawei"},
-                new Artist{ArtistName="Lenovo"},
-                new Artist{ArtistName="Samsung"},
+                new Artist{ArtistName="Kanye West"},
+                new Artist{ArtistName="The Weeknd"},
+                new Artist{ArtistName="Fka Twigs"},
+                new Artist{ArtistName="The Beatles"},
+                new Artist{ArtistName="Miles Davis"},
+                new Artist{ArtistName="Metallica"},
+                new Artist{ArtistName="Marvin Gaye"},
+                new Artist{ArtistName="Freddie Gibbs"},
             });
             dataArtist.SaveChanges();
         }

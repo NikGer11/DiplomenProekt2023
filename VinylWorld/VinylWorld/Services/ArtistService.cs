@@ -33,6 +33,7 @@ namespace VinylWorld.Services
             return _context.Albums
                 .Where(x => x.ArtistId == artistId)
                 .ToList();
-        } 
+        }
+      
     }
 }

@@ -18,8 +18,8 @@ namespace VinylWorld.Models.Order
         public string User { get; set; }
         [Required]
 
-        public int ProductId { get; set; }
-        public string ProductName { get; set; }
+        public int AlbumId { get; set; }
+        public string AlbumName { get; set; }
 
         public string Picture { get; set; }
         [Required]

@@ -16,7 +16,7 @@ namespace VinylWorld.Domain
         [Required]
         [MaxLength(60)]
 
-        public string ProductName { get; set; }
+        public string AlbumName { get; set; }
 
         [Required]
         public int GenreId { get; set; }
@@ -29,16 +29,18 @@ namespace VinylWorld.Domain
 
         public virtual Artist Artist { get; set; }
 
-        public string Image { get; set; }
+        public string Picture { get; set; }
+
 
         [Required]
         [Range(0, 5000)]
 
         public int Quantity { get; set; }
-        [Required]
-        [Range(0, 5000)]
+
+        [Range(1, 50000)]
+
         public decimal Price { get; set; }
-        [Range(0, 200)]
+        [Range(0, 100)]
         public decimal Discount { get; set; }
 
         public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();

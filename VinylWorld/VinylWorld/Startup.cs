@@ -32,22 +32,25 @@ namespace VinylWorld
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseLazyLoadingProxies()
-            .UseSqlServer(
-                Configuration.GetConnectionString("DefaultConnection")));
+           options.UseLazyLoadingProxies()
+               .UseSqlServer(
+                   Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<ApplicationUser>()
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
-          //  services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IArtistService, ArtistService>();
-            services.AddTransient<IGenreService, GenreService>();
-          //  services.AddTransient<IStatisticsService, StatisticsService>();
+                 .AddRoles<IdentityRole>()
+                 .AddEntityFrameworkStores<ApplicationDbContext>()
+                 .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
+
+
+            services.AddTransient<IAlbumService, AlbumService>();
+            services.AddTransient<IArtistService, ArtistService>();
+            services.AddTransient<IGenreService, GenreService>();
+            services.AddTransient<IStatisticsService, StatisticsService>();
+
+           
             services.AddRazorPages();
             services.Configure<IdentityOptions>(options =>
             {
